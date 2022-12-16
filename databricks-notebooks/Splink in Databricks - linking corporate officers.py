@@ -7,16 +7,13 @@
 
 # COMMAND ----------
 
-pip install splink==3.5.0.dev1
-
-# COMMAND ----------
-
-from splink.spark.spark_linker import SparkLinker
-help(SparkLinker)
-
-# COMMAND ----------
-
 pip install git+https://github.com/robertwhiffin/splink.git@splink-databricks
+
+# COMMAND ----------
+
+# MAGIC %sh
+# MAGIC cd /tmp/pip-ephem-wheel-cache-_80tpvmy/wheels/f2/a6/a6/46a45094d214def82aa7926b66d6063ae82d10210650d3afa9;
+# MAGIC ls
 
 # COMMAND ----------
 
@@ -71,10 +68,6 @@ joined_data = (
   spark.read.table("robert_whiffin.splink.companies_with_officers")
 )  
 display(joined_data)
-
-# COMMAND ----------
-
-joined_data.count()
 
 # COMMAND ----------
 
@@ -163,10 +156,6 @@ settings = {
 #drop_tables = list(map(lambda x: x.tableName, temp_tables))
 #for x in drop_tables:
 #    spark.sql(f"drop table {x}")
-
-# COMMAND ----------
-
-help(SparkLinker)
 
 # COMMAND ----------
 
